@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="2dp"
@@ -17,7 +18,7 @@
         android:layout_weight="1"
         android:clipToPadding="false"
         android:padding="20sp"
-        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardBackgroundColor="#215273"
         app:cardCornerRadius="10dp"
         app:cardPreventCornerOverlap="false"
         app:cardUseCompatPadding="false">
@@ -32,18 +33,59 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView"
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/linearLayout7"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_margin="5dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"
-                    android:gravity="left"
-                    android:paddingLeft="5dp"
-                    android:text="TextView"
-                    android:textColor="#ffffff"
-                    android:textSize="20sp" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="#215273"
+                        android:gravity="left"
+                        android:text="TextView"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="#F6CD61"
+                        app:cardBackgroundColor="#C9CEAE"
+                        app:contentPadding="5dp"
+                        app:contentPaddingBottom="0dp"
+                        app:contentPaddingTop="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/takenOrGivenMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
+                            android:padding="0dp"
+                            android:text="★ Took money from"
+                            android:textColor="#000000" />
+
+                    </android.support.v7.widget.CardView>
+
+                </android.support.constraint.ConstraintLayout>
 
                 <TextView
                     android:id="@+id/idview"
@@ -96,7 +138,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
+                android:background="#215273"
                 android:orientation="horizontal"
                 android:padding="5dp"
                 android:showDividers="none|middle|end">
@@ -118,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="#cacaca"
+                    android:background="#ADFCAD"
                     android:text="update" />
             </LinearLayout>
 

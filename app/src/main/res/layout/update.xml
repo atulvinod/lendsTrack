@@ -1,147 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#00FFFFFF"-->
+    <!--android:orientation="vertical"-->
+    <!--android:visibility="visible">-->
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#00FFFFFF"
-    android:orientation="vertical"
-    android:visibility="visible">
+    app:cardBackgroundColor="#343434"
+    app:cardCornerRadius="10dp">
 
-    <android.support.v7.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardBackgroundColor="#343434"
-        app:cardCornerRadius="10dp">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#e6b31e"
             android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="1dp"
                 android:background="#e6b31e"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="1dp"
-                    android:background="#e6b31e"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="Money owed"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/amountView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:background="#e6b31e"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:padding="5dp"
-                    android:text="00"
-                    android:textColor="#000000"
-                    android:textSize="70sp"
-                    app:fontFamily="@font/myfonts" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
-
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#343434"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="Discription"
-                    android:textColor="#ffffff" />
-
-                <EditText
-                    android:id="@+id/newDescription"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#343434"
-                    android:ems="10"
-                    android:gravity="center"
-                    android:inputType="textPersonName"
-                    android:shadowColor="#000000"
-                    android:textColor="#e6b31e"
-                    android:textSize="24sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="2dp"
-                android:background="#343434"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="1dp"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="Money to add or deduct"
-                    android:textColor="#FFFFFF" />
-
-                <EditText
-                    android:id="@+id/numberInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:ems="10"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:inputType="number"
-                    android:textColor="#e6b31e" />
-
-            </LinearLayout>
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Money owed"
+                android:textColor="#000000" />
 
             <TextView
-                android:id="@+id/fingerprintStatus"
+                android:id="@+id/amountView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_margin="2dp"
-                android:gravity="center_horizontal"
-                android:text="Touch the fingerprint sensor to autheticate changes"
-                android:textColor="#e6b31e" />
+                android:layout_marginBottom="5dp"
+                android:background="#e6b31e"
+                android:gravity="center_vertical|center_horizontal"
+                android:padding="5dp"
+                android:text="00"
+                android:textColor="#000000"
+                android:textSize="70sp"
+                app:fontFamily="@font/myfonts" />
+        </LinearLayout>
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#343434"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Discription"
+                android:textColor="#ffffff" />
+
+            <EditText
+                android:id="@+id/newDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#343434"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:shadowColor="#000000"
+                android:textColor="#e6b31e"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="2dp"
+            android:background="#343434"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Money to add or deduct"
+                android:textColor="#FFFFFF" />
+
+            <EditText
+                android:id="@+id/numberInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#343434"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/AddButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Add" />
-
-                <Button
-                    android:id="@+id/deductButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Deduct" />
-
-            </LinearLayout>
+                android:ems="10"
+                android:gravity="center_vertical|center_horizontal"
+                android:inputType="number"
+                android:textColor="#e6b31e" />
 
         </LinearLayout>
-    </android.support.v7.widget.CardView>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/fingerprintStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_margin="2dp"
+            android:gravity="center_horizontal"
+            android:text="Touch the fingerprint sensor to autheticate changes"
+            android:textColor="#e6b31e" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#343434"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/AddButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Add" />
+
+            <Button
+                android:id="@+id/deductButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Deduct" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+
+<!--</LinearLayout>-->
