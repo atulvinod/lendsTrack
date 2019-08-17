@@ -38,18 +38,62 @@ limitations under the License. -->
 
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:id="@+id/giveOrtake"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+        <RadioGroup
+            android:id="@+id/transactionIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/gaveMoneyToRadio"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Gave money"
+                tools:layout_conversion_absoluteHeight="32dp"
+                tools:layout_conversion_absoluteWidth="110dp"
+                tools:layout_editor_absoluteX="526dp"
+                tools:layout_editor_absoluteY="25dp" />
+
+            <RadioButton
+                android:id="@+id/tookMoneyRadio"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:text="Took money"
+                tools:layout_conversion_absoluteHeight="32dp"
+                tools:layout_conversion_absoluteWidth="111dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="117dp" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+        app:layout_constraintTop_toBottomOf="@id/giveOrtake">
 
         <TextView
             android:id="@+id/textView3"
@@ -67,10 +111,10 @@ limitations under the License. -->
             android:id="@+id/edit_word"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
             android:fontFamily="sans-serif-light"
             android:inputType="textAutoComplete"
             android:padding="10dp"
@@ -80,7 +124,6 @@ limitations under the License. -->
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -170,6 +213,7 @@ limitations under the License. -->
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:text="Save"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="8dp" />
 

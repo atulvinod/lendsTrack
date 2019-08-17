@@ -6,6 +6,7 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
 import android.security.keystore.KeyGenParameterSpec;
@@ -20,6 +21,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +44,8 @@ import javax.crypto.SecretKey;
 public class MainActivity extends AppCompatActivity {
 
     public static final int NEW_ENTITY_ACTIVITY_REQUEST_CODE = 1;
+    public static final String GIVEN_MONEY = "Gave money";
+    public static final String TAKEN_MONEY = "Taken money";
 
     public static EntityViewModel model;
 
@@ -71,12 +75,23 @@ public class MainActivity extends AppCompatActivity {
         final ListAdapter adapter = new ListAdapter(this,model,this);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(adapter);
+        final LinearLayout totalAmountLayout = findViewById(R.id.amountDisplay);
         model.getAllWords().observe(this, new Observer<List<Entity>>() {
             @Override
             public void onChanged(@Nullable List<Entity> entities) {
                 int Total = 0;
                 for(int i = 0;i<entities.size();i++){
-                    Total = Total+entities.get(i).getAmount();
+                    if(entities.get(i).getGivenOrTaken().equals(MainActivity.TAKEN_MONEY)){
+                        Total = Total-entities.get(i).getAmount();
+                    }else{
+                        Total = Total+entities.get(i).getAmount();
+                    }
+
+                }
+                if(Total<0){
+                    totalAmountLayout.setBackgroundColor(Color.parseColor("#400000"));
+                }else{
+                    totalAmountLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 }
 
                 totalLent.setText(formatter.formatAmount(Total));
@@ -198,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(requestCode==NEW_ENTITY_ACTIVITY_REQUEST_CODE&&resultCode==RESULT_OK){
 
-            Entity entity = new Entity(Integer.parseInt(data.getStringExtra(NewWordActivity.AMOUNT_REPLY)),data.getStringExtra(NewWordActivity.EXTRA_REPLY),0);
+            Entity entity = new Entity(Integer.parseInt(data.getStringExtra(NewWordActivity.AMOUNT_REPLY)),data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringExtra(NewWordActivity.DESC),data.getStringExtra(NewWordActivity.TRANS),0);
 
             model.insert(entity);
 

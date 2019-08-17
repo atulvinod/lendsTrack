@@ -8,14 +8,17 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +28,9 @@ import com.atulvinod.lendstrack.UpdateDialog;
 
 import java.util.List;
 
+
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.EntityViewHolder> {
+
 
 
     private final LayoutInflater inflater;
@@ -39,7 +44,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.EntityViewHold
 
     class EntityViewHolder extends RecyclerView.ViewHolder{
         private final TextView view;
-
+        private final CardView card;
+        private final LinearLayout updateOrDeleteLayout;
         private int ID;
         private Context c;
         public void setID(int i){
@@ -58,12 +64,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.EntityViewHold
             this.internalString = internalString;
         }
 
-        private final TextView amount;
+        private final TextView amount,desc,transtype,date;
         private EntityViewHolder(View V){
             super(V);
             c = V.getContext();
             view = V.findViewById(R.id.textView);
             amount = V.findViewById(R.id.idview);
+            desc = V.findViewById(R.id.descriptionView);
+            transtype = V.findViewById(R.id.takenOrGivenMoney);
+            card = V.findViewById(R.id.transcationCard);
+            updateOrDeleteLayout = V.findViewById(R.id.updateOrDeleteButtons);
+            date = V.findViewById(R.id.dateOfTransaction);
+
+
             setInternalString(amount.getText().toString());
             Button delete  = V.findViewById(R.id.deleteButton);
             Button update = V.findViewById(R.id.updateButton);
@@ -138,7 +151,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.EntityViewHold
         Entity current = mEntities.get(position);
         holder.view.setText(current.getName());
         holder.amount.setText(formatter.formatAmount(current.getAmount()));
+        holder.desc.setText(current.getInitialDiscription());
+        if(current.getGivenOrTaken().equals(MainActivity.GIVEN_MONEY)){
+            Toast.makeText(c,"Gave money",Toast.LENGTH_LONG).show();
+            holder.transtype.setText("★ Gave money/Debit");
+            holder.card.setBackgroundColor(Color.parseColor("#215273"));
+        }else{
+            holder.transtype.setText("★ Took money/Credit");
+            holder.card.setBackgroundColor(Color.parseColor("#400000"));
+            holder.view.setBackgroundColor(Color.parseColor("#400000"));
+            holder.updateOrDeleteLayout.setBackgroundColor(Color.parseColor("#400000"));
+        }
         holder.setInternalString(""+current.getAmount());
+        holder.date.setText(current.getDate().toString());
         holder.setID(current.getID());
     }
 

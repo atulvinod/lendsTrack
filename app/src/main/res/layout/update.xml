@@ -70,13 +70,11 @@
                 android:id="@+id/newDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#343434"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
                 android:ems="10"
-                android:gravity="center"
-                android:inputType="textPersonName"
-                android:shadowColor="#000000"
-                android:textColor="#e6b31e"
-                android:textSize="24sp" />
+                android:hint="Enter a discription of transcation"
+                android:inputType="textPersonName" />
         </LinearLayout>
 
         <LinearLayout

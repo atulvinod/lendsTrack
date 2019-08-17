@@ -6,62 +6,68 @@
     <!--android:background="#ffffff"-->
     <!--android:orientation="vertical">-->
 
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
 
-        app:cardBackgroundColor="#343434"
-        app:cardCornerRadius="10dp">
+    app:cardBackgroundColor="#343434"
+    app:cardCornerRadius="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Are you sure you want to delete this entry?"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#343434"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/yesButton"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="10dp"
-                android:text="Are you sure you want to delete this entry?"
-                android:textColor="#ffffff"
-                android:textSize="15sp" />
+                android:layout_weight="1"
+                android:text="Yes" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/noButton"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="#343434"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:text="No" />
 
-                <Button
-                    android:id="@+id/yesButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Yes" />
-
-                <Button
-                    android:id="@+id/noButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="No" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/fingerprint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:padding="5dp"
-                android:text="Touch fingerprint sensor to authenticate"
-                android:textColor="#e6b31e" />
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
+
+        <TextView
+            android:id="@+id/fingerprint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Touch fingerprint sensor to authenticate"
+            android:textColor="#e6b31e" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>
 
 <!--</LinearLayout>-->
